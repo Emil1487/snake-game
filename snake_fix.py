@@ -260,7 +260,7 @@ def main():
 
         if head.stop:
             lost = los()
-            if lost:
+            if lost == "exit":
                 return False
             return True
 
@@ -322,7 +322,7 @@ def los():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT:
-                return True
+                return "exit"
             if event.type == pg.MOUSEBUTTONDOWN and event.button == 1:
                 if my_button.is_hovered():
                     press_sound.play()
